@@ -17,6 +17,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  min-height: 100%;
   background: var(--page-bg);
   color: var(--page-fg);
 }
@@ -32,6 +33,33 @@ body {
     sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(
+      60rem 30rem at 50% -10rem,
+      rgba(126, 231, 135, 0.07),
+      transparent 70%
+    ),
+    radial-gradient(
+      40rem 20rem at 90% 110%,
+      rgba(88, 166, 255, 0.05),
+      transparent 70%
+    );
+  background-attachment: fixed;
+}
+
+main {
+  animation: page-in 0.35s ease-out both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 a {

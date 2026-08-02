@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Hemanathan — Portfolio",
+    default: "Hemanathan — Developer",
     template: "%s — Hemanathan",
   },
   description:
@@ -12,10 +14,10 @@ export const metadata: Metadata = {
   creator: "Hemanathan",
   openGraph: {
     type: "website",
-    title: "Hemanathan — Portfolio",
+    title: "Hemanathan — Developer",
     description:
       "Interactive developer workspace and portfolio of Hemanathan: web development, GPU compute, and media automation.",
-    siteName: "Hemanathan — Portfolio",
+    siteName: "Hemanathan — Developer",
   },
 };
 
@@ -31,7 +33,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -16,9 +16,7 @@ export type TerminalLine = { id: number; line: Line };
 export function useTerminal() {
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const [input, setInput] = useState("");
-  const [theme, setTheme] = useState<ThemeId>(() =>
-    storageGet<ThemeId>("theme", "default"),
-  );
+  const [theme, setTheme] = useState<ThemeId>("default");
   const historyRef = useRef<string[]>([]);
   const historyIndexRef = useRef<number>(-1);
   const completionRef = useRef<{ candidates: string[]; index: number }>({
@@ -154,6 +152,7 @@ export function useTerminal() {
 
   useEffect(() => {
     historyRef.current = loadHistory();
+    setTheme(storageGet<ThemeId>("theme", "default"));
   }, []);
 
   useEffect(() => {

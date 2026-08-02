@@ -1,6 +1,8 @@
 import type { CommandContext, CommandRegistry, CommandResult, Line } from "./types";
 import { THEMES } from "./types";
 import { projects } from "@/data/projects";
+import { skillCategories } from "@/data/skills";
+import { contactInfo } from "@/data/site";
 
 const fs: Record<string, { description: string; content: () => Line[] }> = {
   "README.md": {
@@ -25,22 +27,12 @@ const fs: Record<string, { description: string; content: () => Line[] }> = {
         { text: "skills.txt — tools I work with", className: "term-bold" },
       ],
       "",
-      [
-        { text: "  Web:      ", className: "term-dim" },
-        { text: "TypeScript, React, Next.js, Tailwind CSS, Node.js" },
-      ],
-      [
-        { text: "  Compute:  ", className: "term-dim" },
-        { text: "Python, C, CUDA-Q, cuOpt" },
-      ],
-      [
-        { text: "  Media:    ", className: "term-dim" },
-        { text: "DaVinci Resolve scripting, FFmpeg" },
-      ],
-      [
-        { text: "  Tooling:  ", className: "term-dim" },
-        { text: "Git, GitHub Actions, static deployment" },
-      ],
+      ...skillCategories.map(
+        (cat): Line => [
+          { text: `  ${cat.title.padEnd(8)}:  `, className: "term-dim" },
+          { text: cat.items.join(", ") },
+        ],
+      ),
     ],
   },
   "contact.txt": {
@@ -52,15 +44,19 @@ const fs: Record<string, { description: string; content: () => Line[] }> = {
       "",
       [
         { text: "  Email:    ", className: "term-dim" },
-        { text: "TODO: add your email address", className: "term-warn" },
+        contactInfo.email
+          ? { text: contactInfo.email, className: "term-ok" }
+          : { text: "TODO: add your email address", className: "term-warn" },
       ],
       [
         { text: "  GitHub:   ", className: "term-dim" },
-        { text: "https://github.com/Hustlenix", className: "term-ok" },
+        { text: `https://github.com/${contactInfo.githubHandle}`, className: "term-ok" },
       ],
       [
         { text: "  Location: ", className: "term-dim" },
-        { text: "TODO: add your location" },
+        contactInfo.location
+          ? { text: contactInfo.location }
+          : { text: "TODO: add your location", className: "term-warn" },
       ],
     ],
   },
@@ -73,7 +69,7 @@ const fs: Record<string, { description: string; content: () => Line[] }> = {
       "",
       [
         { text: "  GitHub:   " },
-        { text: "Hustlenix", href: "https://github.com/Hustlenix" },
+        { text: contactInfo.githubHandle, href: contactInfo.github },
       ],
       [
         { text: "  TODO: LinkedIn, X, or other profiles", className: "term-dim" },
@@ -171,24 +167,12 @@ const registry: CommandRegistry = {
   skills: {
     description: "Tools and technologies I use",
     run: () => ({
-      lines: [
-        [
-          { text: "Web", className: "term-bold" },
-          { text: "   TypeScript · React · Next.js · Tailwind CSS · Node.js" },
+      lines: skillCategories.map(
+        (cat): Line => [
+          { text: cat.title.padEnd(9), className: "term-bold" },
+          { text: "  " + cat.items.join(" · ") },
         ],
-        [
-          { text: "Compute", className: "term-bold" },
-          { text: "  Python · C · CUDA-Q · cuOpt" },
-        ],
-        [
-          { text: "Media", className: "term-bold" },
-          { text: "   DaVinci Resolve scripting · FFmpeg" },
-        ],
-        [
-          { text: "Tooling", className: "term-bold" },
-          { text: "  Git · GitHub Actions · static deployment" },
-        ],
-      ],
+      ),
     }),
   },
   projects: {
@@ -236,15 +220,19 @@ const registry: CommandRegistry = {
       lines: [
         [
           { text: "Email:    ", className: "term-dim" },
-          { text: "TODO: add your email address", className: "term-warn" },
+          contactInfo.email
+            ? { text: contactInfo.email, className: "term-ok" }
+            : { text: "TODO: add your email address", className: "term-warn" },
         ],
         [
           { text: "GitHub:   ", className: "term-dim" },
-          { text: "Hustlenix", href: "https://github.com/Hustlenix" },
+          { text: contactInfo.githubHandle, href: contactInfo.github },
         ],
         [
           { text: "Location: ", className: "term-dim" },
-          { text: "TODO: add your location" },
+          contactInfo.location
+            ? { text: contactInfo.location }
+            : { text: "TODO: add your location", className: "term-warn" },
         ],
       ],
     }),
@@ -255,7 +243,7 @@ const registry: CommandRegistry = {
       lines: [
         [
           { text: "GitHub:   " },
-          { text: "Hustlenix", href: "https://github.com/Hustlenix" },
+          { text: contactInfo.githubHandle, href: contactInfo.github },
         ],
         [
           { text: "TODO: LinkedIn, X, or other profiles", className: "term-dim" },

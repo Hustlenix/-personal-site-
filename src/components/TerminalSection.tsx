@@ -5,14 +5,24 @@ import { Terminal } from "./terminal/Terminal";
 
 const quickCommands = ["help", "projects", "skills", "theme dracula"];
 
-export function TerminalSection() {
+export function TerminalSection({
+  terminalClassName,
+  outputClassName,
+}: {
+  terminalClassName?: string;
+  outputClassName?: string;
+}) {
   const terminalRef = useRef<{
     runExternal: (raw: string) => void;
   }>(null);
 
   return (
     <section aria-label="Interactive terminal" className="w-full">
-      <Terminal apiRef={terminalRef} />
+      <Terminal
+        apiRef={terminalRef}
+        terminalClassName={terminalClassName}
+        outputClassName={outputClassName}
+      />
       <div className="mt-4 flex flex-wrap items-center gap-2">
         <span
           className="text-xs uppercase tracking-widest"
@@ -25,7 +35,7 @@ export function TerminalSection() {
             key={cmd}
             type="button"
             onClick={() => terminalRef.current?.runExternal(cmd)}
-            className="rounded-full border px-3 py-1 text-xs font-medium transition-colors"
+            className="rounded-full border px-3 py-1 font-mono text-xs font-medium transition-colors"
             style={{
               borderColor: "var(--page-line)",
               color: "var(--page-fg)",
