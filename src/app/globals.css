@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+:root {
+  --page-bg: #0c0f14;
+  --page-fg: #e6e9ef;
+  --page-muted: #8b93a3;
+  --page-accent: #7ee787;
+  --page-line: #232a35;
+  --term-titlebar: #151a22;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--page-fg);
+}
+
+body {
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(126, 231, 135, 0.25);
+}
+
+:focus-visible {
+  outline: 2px solid var(--page-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Terminal theming — data-theme on the terminal shell swaps tokens.
+------------------------------------------------------------------ */
+.terminal {
+  --term-bg: #0e1117;
+  --term-fg: #e6edf3;
+  --term-dim: #768390;
+  --term-accent: #58a6ff;
+  --term-ok: #7ee787;
+  --term-warn: #d29922;
+  --term-err: #ff7b72;
+  --term-magenta: #bc8cff;
+  --term-cyan: #76e3ea;
+  --term-line: #21262d;
+  --term-titlebar: #151a22;
+  --term-title-fg: #768390;
+  --term-caret: #7ee787;
+  --term-shadow: rgba(0, 0, 0, 0.5);
+  --term-font: ui-monospace, "Cascadia Code", "Fira Code", Consolas, Menlo,
+    monospace;
+}
+
+.terminal[data-theme="dracula"] {
+  --term-bg: #191a21;
+  --term-fg: #f8f8f2;
+  --term-dim: #6272a4;
+  --term-accent: #8be9fd;
+  --term-ok: #50fa7b;
+  --term-warn: #f1fa8c;
+  --term-err: #ff5555;
+  --term-magenta: #ff79c6;
+  --term-cyan: #8be9fd;
+  --term-line: #282a36;
+  --term-titlebar: #21222c;
+  --term-title-fg: #6272a4;
+  --term-caret: #50fa7b;
+}
+
+.terminal[data-theme="gruvbox"] {
+  --term-bg: #282828;
+  --term-fg: #ebdbb2;
+  --term-dim: #928374;
+  --term-accent: #83a598;
+  --term-ok: #b8bb26;
+  --term-warn: #fabd2f;
+  --term-err: #fb4934;
+  --term-magenta: #d3869b;
+  --term-cyan: #8ec07c;
+  --term-line: #3c3836;
+  --term-titlebar: #1d2021;
+  --term-title-fg: #928374;
+  --term-caret: #b8bb26;
+}
+
+.terminal[data-theme="matrix"] {
+  --term-bg: #050805;
+  --term-fg: #33ff66;
+  --term-dim: #1a6b33;
+  --term-accent: #66ff99;
+  --term-ok: #33ff66;
+  --term-warn: #ffee58;
+  --term-err: #ff5555;
+  --term-magenta: #8be9fd;
+  --term-cyan: #66ffee;
+  --term-line: #0f1f14;
+  --term-titlebar: #070d08;
+  --term-title-fg: #1a6b33;
+  --term-caret: #33ff66;
+}
+
+.terminal .term-cmd {
+  color: var(--term-ok);
+}
+.terminal .term-dim {
+  color: var(--term-dim);
+}
+.terminal .term-accent {
+  color: var(--term-accent);
+}
+.terminal .term-warn {
+  color: var(--term-warn);
+}
+.terminal .term-err {
+  color: var(--term-err);
+}
+.terminal .term-magenta {
+  color: var(--term-magenta);
+}
+.terminal .term-cyan {
+  color: var(--term-cyan);
+}
+.terminal .term-bold {
+  font-weight: 700;
+}
+.terminal a.term-link {
+  color: var(--term-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------
+   Scrollbar (terminal output)
+------------------------------------------------------------------ */
+.term-output {
+  scrollbar-width: thin;
+  scrollbar-color: var(--term-line) transparent;
+}
+.term-output::-webkit-scrollbar {
+  width: 8px;
+}
+.term-output::-webkit-scrollbar-track {
+  background: transparent;
+}
+.term-output::-webkit-scrollbar-thumb {
+  background: var(--term-line);
+  border-radius: 4px;
+}
+.term-output::-webkit-scrollbar-thumb:hover {
+  background: var(--term-dim);
+}
+
+/* ------------------------------------------------------------------
+   Caret + utility classes used by the terminal UI
+------------------------------------------------------------------ */
+.term-caret {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  vertical-align: text-bottom;
+  background: var(--term-caret);
+  animation: caret-blink 1s steps(1) infinite;
+}
+.terminal:not(:focus-within) .term-caret {
+  background: var(--term-dim);
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.term-glow {
+  box-shadow:
+    0 0 0 1px var(--term-line),
+    0 24px 60px var(--term-shadow);
+}

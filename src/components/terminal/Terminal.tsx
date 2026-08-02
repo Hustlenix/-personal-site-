@@ -1,0 +1,75 @@
+"use client";
+
+import { useEffect } from "react";
+import { TerminalLine } from "./TerminalLine";
+import { TerminalToolbar } from "./TerminalToolbar";
+import { useTerminal } from "@/hooks/useTerminal";
+
+type TerminalApi = {
+  runExternal: (raw: string) => void;
+};
+
+export function Terminal({ apiRef }: { apiRef?: React.RefObject<TerminalApi | null> }) {
+  const t = useTerminal();
+
+  useEffect(() => {
+    if (apiRef) {
+      apiRef.current = { runExternal: t.runExternal };
+    }
+  }, [apiRef, t.runExternal]);
+
+  return (
+    <div
+      className="terminal term-glow overflow-hidden rounded-xl"
+      data-theme={t.theme}
+      onClick={() => t.inputRef.current?.focus()}
+    >
+      <TerminalToolbar
+        theme={t.theme}
+        cycleTheme={t.cycleTheme}
+        onClear={t.clearLines}
+      />
+      <div
+        ref={t.scrollRef}
+        onScroll={t.handleScroll}
+        role="log"
+        aria-label="Terminal output"
+        aria-live="polite"
+        className="term-output h-[420px] overflow-y-auto px-4 py-3 text-[13px] leading-relaxed sm:text-sm"
+        style={{
+          background: "var(--term-bg)",
+          color: "var(--term-fg)",
+          fontFamily: "var(--term-font)",
+        }}
+      >
+        {t.banner.map((line, i) => (
+          <TerminalLine key={`banner-${i}`} line={line} />
+        ))}
+        {t.lines.map((entry) => (
+          <TerminalLine key={entry.id} line={entry.line} />
+        ))}
+        <div className="flex items-center gap-1">
+          <span style={{ color: "var(--term-dim)" }}>
+            visitor@portfolio:~$
+          </span>
+          <span style={{ color: "var(--term-ok)" }}>{t.input}</span>
+          <span className="term-caret" aria-hidden="true" />
+        </div>
+        <input
+          ref={t.inputRef}
+          type="text"
+          value={t.input}
+          onChange={(e) => t.setInput(e.target.value)}
+          onKeyDown={t.handleKeyDown}
+          aria-label="Terminal input"
+          autoFocus
+          autoComplete="off"
+          autoCapitalize="off"
+          autoCorrect="off"
+          spellCheck={false}
+          className="absolute h-px w-px opacity-0"
+        />
+      </div>
+    </div>
+  );
+}
