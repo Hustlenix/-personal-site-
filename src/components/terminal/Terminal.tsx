@@ -19,12 +19,19 @@ export function Terminal({
   outputClassName?: string;
 }) {
   const t = useTerminal();
+  const { inputRef, runExternal } = t;
 
   useEffect(() => {
     if (apiRef) {
-      apiRef.current = { runExternal: t.runExternal };
+      apiRef.current = { runExternal };
     }
-  }, [apiRef, t.runExternal]);
+  }, [apiRef, runExternal]);
+
+  useEffect(() => {
+    if (window.matchMedia("(pointer: fine)").matches) {
+      inputRef.current?.focus();
+    }
+  }, [inputRef]);
 
   return (
     <div
@@ -42,7 +49,6 @@ export function Terminal({
         onScroll={t.handleScroll}
         role="log"
         aria-label="Terminal output"
-        aria-live="polite"
         className={`term-output overflow-y-auto px-4 py-3 text-[13px] leading-relaxed sm:text-sm ${outputClassName}`}
         style={{
           background: "var(--term-bg)",
@@ -68,10 +74,9 @@ export function Terminal({
         ref={t.inputRef}
         type="text"
         value={t.input}
-        onChange={(e) => t.setInput(e.target.value)}
+        onChange={(e) => t.handleInput(e.target.value)}
         onKeyDown={t.handleKeyDown}
         aria-label="Terminal input"
-        autoFocus
         autoComplete="off"
         autoCapitalize="off"
         autoCorrect="off"

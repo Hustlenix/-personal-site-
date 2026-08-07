@@ -3,7 +3,7 @@ export const contactInfo = {
   username: "Hustlenix",
   github: "https://github.com/Hustlenix",
   githubHandle: "Hustlenix",
-  email: null as string | null,
+  email: "thehustlenix@gmail.com",
   location: null as string | null,
 };
 

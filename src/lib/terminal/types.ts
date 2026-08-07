@@ -24,6 +24,7 @@ export const THEMES: ThemeId[] = ["default", "dracula", "gruvbox", "matrix"];
 export type CommandContext = {
   theme: ThemeId;
   setTheme: (theme: ThemeId) => void;
+  getHistory: () => string[];
 };
 
 export type CommandResult = {
@@ -35,6 +36,8 @@ export type Command = {
   description: string;
   usage?: string;
   run: (args: string[], ctx: CommandContext) => CommandResult;
+  /** Optional Tab-completion for the command's arguments. */
+  complete?: (token: string) => string[];
 };
 
 export type CommandRegistry = Record<string, Command>;

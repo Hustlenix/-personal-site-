@@ -35,18 +35,10 @@ export function TerminalSection({
             key={cmd}
             type="button"
             onClick={() => terminalRef.current?.runExternal(cmd)}
-            className="rounded-full border px-3 py-1 font-mono text-xs font-medium transition-colors"
+            className="term-quick-btn cursor-pointer rounded-full border px-3 py-1 font-mono text-xs font-medium transition-colors"
             style={{
               borderColor: "var(--page-line)",
               color: "var(--page-fg)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "var(--page-accent)";
-              e.currentTarget.style.color = "var(--page-accent)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "var(--page-line)";
-              e.currentTarget.style.color = "var(--page-fg)";
             }}
           >
             {cmd}

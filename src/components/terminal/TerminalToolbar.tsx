@@ -31,8 +31,7 @@ export function TerminalToolbar({ theme, cycleTheme, onClear }: Props) {
           type="button"
           onClick={cycleTheme}
           title="Cycle theme"
-          className="rounded px-2 py-0.5 text-xs font-medium transition-colors hover:opacity-100"
-          style={{ color: "var(--term-title-fg)" }}
+          className="term-tool-btn cursor-pointer rounded"
         >
           theme
         </button>
@@ -40,8 +39,7 @@ export function TerminalToolbar({ theme, cycleTheme, onClear }: Props) {
           type="button"
           onClick={onClear}
           title="Clear screen"
-          className="rounded px-2 py-0.5 text-xs font-medium transition-colors hover:opacity-100"
-          style={{ color: "var(--term-title-fg)" }}
+          className="term-tool-btn cursor-pointer rounded"
         >
           clear
         </button>

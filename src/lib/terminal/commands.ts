@@ -1,8 +1,24 @@
 import type { CommandContext, CommandRegistry, CommandResult, Line } from "./types";
 import { THEMES } from "./types";
+import { parseInput } from "./parser";
 import { projects } from "@/data/projects";
 import { skillCategories } from "@/data/skills";
 import { contactInfo } from "@/data/site";
+
+export const WELCOME_LINES: Line[] = [
+  [
+    { text: "Hemanathan", className: ["term-bold", "term-magenta"] },
+    { text: " — interactive workspace", className: "term-dim" },
+  ],
+  [
+    { text: "Type ", className: "term-dim" },
+    { text: "help", className: "term-cmd" },
+    { text: " to list commands. Tab to autocomplete, ", className: "term-dim" },
+    { text: "↑/↓", className: "term-warn" },
+    { text: " for history.", className: "term-dim" },
+  ],
+  "",
+];
 
 const fs: Record<string, { description: string; content: () => Line[] }> = {
   "README.md": {
@@ -177,6 +193,10 @@ const registry: CommandRegistry = {
   },
   projects: {
     description: "Things I have built",
+    complete: (token) =>
+      projects
+        .map((p) => p.name)
+        .filter((name) => name.startsWith(token.toLowerCase())),
     run: (args) => {
       const want = args[0];
       if (want) {
@@ -274,6 +294,7 @@ const registry: CommandRegistry = {
   theme: {
     description: "Switch color theme",
     usage: "theme [default|dracula|gruvbox|matrix]",
+    complete: (token) => THEMES.filter((t) => t.startsWith(token.toLowerCase())),
     run: (args, ctx) => {
       if (args.length === 0) {
         return {
@@ -319,6 +340,7 @@ const registry: CommandRegistry = {
   ls: {
     description: "List the virtual filesystem",
     usage: "ls [projects/]",
+    complete: (token) => ["projects"].filter((d) => d.startsWith(token.toLowerCase())),
     run: (args) => {
       const target = args[0]?.replace(/\/+$/, "");
       if (target && target !== "projects") {
@@ -369,6 +391,14 @@ const registry: CommandRegistry = {
   cat: {
     description: "Read a virtual file",
     usage: "cat <file>",
+    complete: (token) => {
+      const lower = token.toLowerCase();
+      const names = [
+        ...Object.keys(fs),
+        ...projects.map((p) => `projects/${p.name}.txt`),
+      ];
+      return names.filter((n) => n.startsWith(lower));
+    },
     run: (args) => {
       const name = args[0]?.replace(/\/+$/, "");
       if (!name) {
@@ -407,6 +437,53 @@ const registry: CommandRegistry = {
       };
     },
   },
+  history: {
+    description: "Show command history",
+    run: (_args, ctx) => {
+      const h = ctx.getHistory();
+      if (h.length === 0) {
+        return {
+          lines: [
+            [
+              { text: "history: empty — run some commands first", className: "term-dim" },
+            ],
+          ],
+        };
+      }
+      return {
+        lines: h.map(
+          (entry, i): Line => [
+            { text: `  ${String(i + 1).padStart(3)}  `, className: "term-dim" },
+            { text: entry },
+          ],
+        ),
+      };
+    },
+  },
+  banner: {
+    description: "Reprint the welcome banner",
+    run: () => ({ lines: WELCOME_LINES }),
+  },
+  sudo: {
+    description: "Escalate privileges (probably not)",
+    usage: "sudo <command>",
+    run: (args) => {
+      const who = args.join(" ");
+      return {
+        lines: [
+          [
+            { text: "Hustlenix is not in the sudoers file.", className: "term-err" },
+            { text: " This incident will be reported.", className: "term-dim" },
+          ],
+          ...(who
+            ? ([[
+                { text: `(Nice try with "${who}" though.)`, className: "term-dim" },
+              ]] as Line[])
+            : []),
+        ],
+      };
+    },
+  },
   exit: {
     description: "Try to leave",
     run: () => ({
@@ -428,14 +505,14 @@ export function runCommand(
   raw: string,
   ctx: CommandContext,
 ): { result: CommandResult; command: string; args: string[] } {
-  const parts = raw.trim().split(/\s+/);
-  const command = parts[0]?.toLowerCase() ?? "";
-  const args = parts.slice(1);
+  const args = parseInput(raw);
+  const command = args[0]?.toLowerCase() ?? "";
+  const rest = args.slice(1);
   const cmd = registry[command];
   if (!cmd) {
     return {
       command,
-      args,
+      args: rest,
       result: {
         lines: [
           [
@@ -450,7 +527,7 @@ export function runCommand(
       },
     };
   }
-  return { command, args, result: cmd.run(args, ctx) };
+  return { command, args: rest, result: cmd.run(rest, ctx) };
 }
 
 export default registry;
