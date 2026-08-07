@@ -1,10 +1,10 @@
 export const contactInfo = {
-  name: "Hemanathan",
-  username: "Hustlenix",
+  name: "Lalith",
+  username: "lalith",
   github: "https://github.com/Hustlenix",
   githubHandle: "Hustlenix",
   email: "thehustlenix@gmail.com",
-  location: null as string | null,
+  location: "India",
 };
 
 export const navLinks = [

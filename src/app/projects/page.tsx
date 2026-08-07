@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Projects by Hemanathan: an ocean-protection concept site and this interactive portfolio workspace.",
+    "Projects by Lalith: an ocean-protection concept site and this interactive portfolio workspace.",
 };
 
 export default function ProjectsPage() {

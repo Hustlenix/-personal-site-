@@ -1,4 +1,4 @@
-# Hemanathan — Personal Site
+# Lalith — Personal Site
 
 An interactive developer workspace and portfolio. Built with Next.js 15,
 React 19, TypeScript, and Tailwind CSS 4.

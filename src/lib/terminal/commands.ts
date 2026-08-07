@@ -7,7 +7,7 @@ import { contactInfo } from "@/data/site";
 
 export const WELCOME_LINES: Line[] = [
   [
-    { text: "Hemanathan", className: ["term-bold", "term-magenta"] },
+    { text: "Lalith", className: ["term-bold", "term-magenta"] },
     { text: " — interactive workspace", className: "term-dim" },
   ],
   [
@@ -28,6 +28,11 @@ const fs: Record<string, { description: string; content: () => Line[] }> = {
       "",
       "An interactive portfolio built as a developer workspace.",
       "Everything runs in the browser; no shell, no server — just React.",
+      [
+        { text: "Built by ", className: "term-dim" },
+        { text: "lalith", className: "term-ok" },
+        { text: " — a student who refuses to stop building.", className: "term-dim" },
+      ],
       [
         { text: "See also: ", className: "term-dim" },
         { text: "about", className: "term-cmd" },
@@ -165,17 +170,19 @@ const registry: CommandRegistry = {
     run: () => ({
       lines: [
         [
-          { text: "Hemanathan", className: "term-bold" },
-          { text: " — developer", className: "term-dim" },
+          { text: "Lalith", className: "term-bold" },
+          { text: " — student, builder, perpetual beginner.", className: "term-dim" },
         ],
         "",
-        "I build software across the web, GPU compute, and media automation.",
-        "This site is my interactive workspace: a portfolio you can actually",
-        "type in. Every command runs in your browser — no shell involved.",
+        "I'm not a founder. Not an engineer. Not an expert. Not yet.",
+        "I'm just someone who refuses to stop building.",
+        "I care more about becoming than arriving — every project",
+        "is another step toward someone who can solve harder problems.",
         "",
         [
-          { text: "TODO: ", className: "term-warn" },
-          { text: "replace this paragraph with your real intro.", className: "term-dim" },
+          { text: "Read the full story on the ", className: "term-dim" },
+          { text: "/about", className: "term-cmd" },
+          { text: " page.", className: "term-dim" },
         ],
       ],
     }),
@@ -281,8 +288,8 @@ const registry: CommandRegistry = {
     run: () => ({
       lines: [
         [
-          { text: "hustlenix", className: "term-ok" },
-          { text: " — Hemanathan, the developer who built this workspace.", className: "term-dim" },
+          { text: "lalith", className: "term-ok" },
+          { text: " — a student who refuses to stop building.", className: "term-dim" },
         ],
       ],
     }),
@@ -472,7 +479,7 @@ const registry: CommandRegistry = {
       return {
         lines: [
           [
-            { text: "Hustlenix is not in the sudoers file.", className: "term-err" },
+            { text: "Lalith is not in the sudoers file.", className: "term-err" },
             { text: " This incident will be reported.", className: "term-dim" },
           ],
           ...(who

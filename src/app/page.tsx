@@ -25,13 +25,13 @@ export default function HomePage() {
             <span
               className="bg-gradient-to-r from-[var(--page-accent)] to-[var(--term-cyan)] bg-clip-text text-transparent"
             >
-              Hemanathan
+              Lalith
             </span>
           </h1>
           <p className="max-w-xl text-lg" style={{ color: "var(--page-muted)" }}>
-            I build software across the web, GPU compute, and media
-            automation. This site is my interactive workspace — explore the
-            pages, or open the terminal and just start typing.
+            A student who refuses to stop building. This site is my interactive
+            workspace — explore the pages, or open the terminal and just start
+            typing.
           </p>
         </div>
 

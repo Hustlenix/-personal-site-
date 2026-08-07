@@ -5,7 +5,7 @@ import { contactInfo } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Ways to reach Hemanathan: GitHub, email, and the interactive terminal.",
+    "Ways to reach Lalith: GitHub, email, and the interactive terminal.",
 };
 
 export default function ContactPage() {
@@ -71,15 +71,20 @@ export default function ContactPage() {
             More ways
           </span>
           <span style={{ color: "var(--page-muted)" }}>
-            Email and location coming soon — or reach me through the{" "}
-            <Link
-              href="/workspace"
-              className="font-medium underline underline-offset-4"
-              style={{ color: "var(--page-accent)" }}
-            >
-              terminal
-            </Link>
-            .
+            {contactInfo.location && (
+              <>
+                Based in {contactInfo.location}. Looking to collaborate? Reach
+                out through the{" "}
+                <Link
+                  href="/workspace"
+                  className="font-medium underline underline-offset-4"
+                  style={{ color: "var(--page-accent)" }}
+                >
+                  terminal
+                </Link>{" "}
+                — or just say hi.
+              </>
+            )}
           </span>
         </div>
       </div>

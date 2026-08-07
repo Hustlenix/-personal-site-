@@ -17,19 +17,19 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hemanathan — Developer",
-    template: "%s — Hemanathan",
+    default: "Lalith — Developer",
+    template: "%s — Lalith",
   },
   description:
-    "Interactive developer workspace and portfolio of Hemanathan: web development, GPU compute, and media automation.",
-  authors: [{ name: "Hemanathan" }],
-  creator: "Hemanathan",
+    "Interactive developer workspace and portfolio of Lalith: a student who refuses to stop building.",
+  authors: [{ name: "Lalith" }],
+  creator: "Lalith",
   openGraph: {
     type: "website",
-    title: "Hemanathan — Developer",
+    title: "Lalith — Developer",
     description:
-      "Interactive developer workspace and portfolio of Hemanathan: web development, GPU compute, and media automation.",
-    siteName: "Hemanathan — Developer",
+      "Interactive developer workspace and portfolio of Lalith: a student who refuses to stop building.",
+    siteName: "Lalith — Developer",
   },
 };
 
