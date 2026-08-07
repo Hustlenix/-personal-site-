@@ -23,7 +23,7 @@ export function Navbar() {
           className="font-mono text-sm font-semibold tracking-tight"
           style={{ color: "var(--page-accent)" }}
         >
-          ~/hemanathan
+          ~/lalith
         </Link>
         <div className="flex flex-wrap items-center gap-1">
           {navLinks.map((link) => {
