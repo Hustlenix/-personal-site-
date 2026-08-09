@@ -1,6 +1,7 @@
 /* =========================================================
    LALITH — script.js
-   Vanilla JS, zero dependencies. Three small modules:
+   Vanilla JS, zero dependencies. Four small modules:
+   0. Theme toggle (light ↔ JARVIS), persisted to localStorage
    1. Scroll reveal (IntersectionObserver)
    2. Active nav link on scroll (IntersectionObserver)
    3. JARVIS status ticker (types the status feed values)
@@ -12,6 +13,33 @@
   "use strict";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- 0. Theme toggle (light ↔ JARVIS) ---------- */
+
+  var THEME_KEY = "lalith-theme";
+  var themeToggle = document.querySelector(".theme-toggle");
+
+  if (themeToggle) {
+    var initialDark = document.documentElement.getAttribute("data-theme") === "jarvis";
+    themeToggle.setAttribute("aria-checked", initialDark ? "true" : "false");
+
+    themeToggle.addEventListener("click", function () {
+      var isDark = document.documentElement.getAttribute("data-theme") === "jarvis";
+      setTheme(isDark ? "light" : "jarvis");
+    });
+  }
+
+  function setTheme(theme) {
+    if (theme === "jarvis") {
+      document.documentElement.setAttribute("data-theme", "jarvis");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-checked", theme === "jarvis" ? "true" : "false");
+    }
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+  }
 
   /* ---------- 1. Scroll reveal ---------- */
 

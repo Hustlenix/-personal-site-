@@ -10,7 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      if (localStorage.getItem("lalith-theme") === "jarvis") {
+        document.documentElement.setAttribute("data-theme", "jarvis");
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
@@ -28,6 +35,10 @@
           <li><a href="#signal">Signal</a></li>
         </ul>
       </nav>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" title="Toggle JARVIS mode">
+        <span class="arc-reactor arc-reactor--toggle" aria-hidden="true"></span>
+        <span class="toggle-label">Jarvis</span>
+      </button>
     </div>
   </header>
 
@@ -115,7 +126,7 @@
     <section class="section reveal" id="origin">
       <div class="container container--narrow">
         <svg class="web-divider" viewBox="0 0 240 24" aria-hidden="true" focusable="false">
-          <g fill="none" stroke="#0A0A0A">
+          <g fill="none" stroke="currentColor">
             <path d="M0 12 H94" stroke-width="3" />
             <circle cx="120" cy="12" r="9" stroke-width="2" />
             <circle cx="120" cy="12" r="4" stroke-width="2" fill="#E62429" />
