@@ -1,39 +1,40 @@
-# Lalith — Personal Site
+# LALITH — Friendly Neighborhood Builder
 
-An interactive developer workspace and portfolio. Built with Next.js 15,
-React 19, TypeScript, and Tailwind CSS 4.
+Personal site. One page, plain HTML + CSS + vanilla JS. No frameworks, no
+build step, no dependencies — just `site/`.
+
+Neo-brutalism × Spider-Man × Iron Man. The suits' colors (Spidey red
+`#E62429`, deep navy `#101B33`, Iron gold `#F5C518`) on cream, with hard
+borders, hard shadows, halftone dots, a web motif, and a CSS arc reactor.
+Flip the **JARVIS** switch in the nav to drop the whole page into dark
+cockpit mode — the choice is saved to `localStorage`.
 
 ## What's inside
 
-- **Five pages**: home, projects, about, contact, and a dedicated workspace
-  page with a fully client-side terminal.
-- **A real in-browser terminal** (`/workspace`) with command history,
-  Tab autocomplete, four color themes, and a virtual filesystem
-  (`ls`, `cat`, `help`, `theme`, …). No shell, no server — pure React state.
-- **Engineering blueprint** in [`docs/blueprint-terminal.md`](docs/blueprint-terminal.md):
-  architecture, contracts, edge cases, and three planned extensions.
+| Path | Purpose |
+|---|---|
+| `site/index.html` | The entire site: hero, JARVIS status feed, missions, origin story, suit systems, signal |
+| `site/styles.css` | All styling. Two theme token blocks (`:root` light, `[data-theme="jarvis"]` dark) — no other color rules |
+| `site/script.js` | ~130 lines vanilla JS: theme toggle, scroll reveal, active-nav, JARVIS ticker |
+| `site/404.html` | Themed 404, served automatically by GitHub Pages |
+| `.github/workflows/deploy.yml` | Pushes `site/` to GitHub Pages on every commit to `main` |
 
-## Development
+## Run locally
+
+Double-click `site/index.html`, or serve it:
 
 ```bash
-npm install
-npm run dev      # http://localhost:3000
-npm run lint
-npm run build    # server build
+python -m http.server
+# open http://localhost:8000
 ```
 
-## Deploy (GitHub Pages)
+## Deploy
 
-The repo ships a workflow (`.github/workflows/deploy.yml`) that builds with
-`STATIC_EXPORT=true` (static export with `/‑personal‑site‑` basePath) and
-deploys to GitHub Pages on every push to `main`.
+The workflow publishes the `site/` folder to GitHub Pages on every push to
+`main`. Live at:
 
-To activate:
+https://hustlenix.github.io/-personal-site-/
 
-1. Repo → Settings → Pages → Source: **GitHub Actions**.
-2. Push to `main`; the workflow builds and publishes `out/`.
+## License
 
-The site lives at `https://hustlenix.github.io/-personal-site-/`.
-
-> Local `npm run build` produces a server build; the static export only
-> happens in CI (or locally via `STATIC_EXPORT=true npm run build`).
+MIT — see [LICENSE](LICENSE).
