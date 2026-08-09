@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LALITH — Friendly Neighborhood Builder</title>
+  <meta name="description" content="Personal site of Lalith — a student who refuses to stop building. Missions, origin story, suit systems, and open channels.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23F5C518' stroke='%230A0A0A' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23E62429' stroke='%230A0A0A' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23FFFFFF' stroke='%230A0A0A' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="#hero" aria-label="Back to top">
+        <span class="arc-reactor" aria-hidden="true"></span>
+        <span class="wordmark">LAL<span class="wm-accent">ITH</span></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#missions">Missions</a></li>
+          <li><a href="#origin">Origin</a></li>
+          <li><a href="#systems">Systems</a></li>
+          <li><a href="#signal">Signal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="hero">
+      <svg class="hero-web" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="#F4F1E8" stroke-width="2" opacity="0.9">
+          <path d="M140 118 A22 22 0 0 1 118 140" />
+          <path d="M140 96 A44 44 0 0 1 96 140" />
+          <path d="M140 74 A66 66 0 0 1 74 140" />
+          <path d="M140 52 A88 88 0 0 1 52 140" />
+          <path d="M140 140 L0 0 M140 140 L0 82 M140 140 L82 0" />
+        </g>
+      </svg>
+      <div class="hero-badge-wrap"><span class="arc-reactor arc-reactor--badge" aria-hidden="true"></span></div>
+      <div class="hero-inner">
+        <p class="hero-kicker">// Friendly neighborhood builder</p>
+        <h1>LALITH</h1>
+        <p class="hero-tagline">Student. Builder. Problem-solver.</p>
+        <p class="hero-blurb">I'm still a student — not a founder, not an engineer, not an expert. Not yet. Just someone who refuses to stop building.</p>
+        <div class="hero-actions">
+          <a class="btn btn--red" href="#missions">View Missions</a>
+          <a class="btn btn--gold" href="#signal">Signal Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight reveal" id="status" aria-label="Status feed">
+      <div class="container container--narrow">
+        <div class="card status-card">
+          <p class="status-title mono">JARVIS // STATUS FEED <span class="led led--live" aria-hidden="true"></span></p>
+          <dl class="status-rows">
+            <div class="status-row"><dt>Name</dt><dd data-tick="LALITH">LALITH</dd></div>
+            <div class="status-row"><dt>Base</dt><dd data-tick="INDIA">INDIA</dd></div>
+            <div class="status-row"><dt>Status</dt><dd data-tick="SUTTING UP" data-cycle="SUTTING UP|BUILDING STUFF|SHIPPING">SUTTING UP</dd></div>
+            <div class="status-row"><dt>Power Source</dt><dd data-tick="CURIOSITY">CURIOSITY</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="missions">
+      <div class="container">
+        <p class="section-kicker">// Active deployments</p>
+        <h2 class="section-title">Missions</h2>
+        <p class="section-sub mono">REAL SHIPS. REAL STATUS. NO FICTION.</p>
+        <div class="cards-grid">
+          <article class="card mission-card">
+            <div class="mission-top">
+              <span class="led led--live" aria-hidden="true"></span>
+              <span class="status-tag status-tag--live">Live</span>
+            </div>
+            <h3>aquaguardian</h3>
+            <p class="mission-tagline">Ocean-protection concept site</p>
+            <p class="mission-desc">A static-export Next.js site for a fictional ocean-cleaning robot concept, with sourced ocean science data and a dashboard. Purely educational — no physical product exists.</p>
+            <ul class="chips">
+              <li class="chip">Next.js</li>
+              <li class="chip">TypeScript</li>
+              <li class="chip">Tailwind</li>
+              <li class="chip">GitHub Pages</li>
+            </ul>
+            <a class="btn btn--small" href="https://github.com/Hustlenix/aquaguardian" target="_blank" rel="noopener noreferrer">View Source →</a>
+          </article>
+          <article class="card mission-card">
+            <div class="mission-top">
+              <span class="led led--wip" aria-hidden="true"></span>
+              <span class="status-tag status-tag--wip">In Progress</span>
+            </div>
+            <h3>-personal-site-</h3>
+            <p class="mission-tagline">This workspace, terminal included</p>
+            <p class="mission-desc">The site you are on. A portfolio built around an interactive in-browser terminal that really works: history, autocomplete, themes, and a virtual filesystem.</p>
+            <ul class="chips">
+              <li class="chip">Next.js</li>
+              <li class="chip">TypeScript</li>
+              <li class="chip">Tailwind</li>
+              <li class="chip">React</li>
+            </ul>
+            <a class="btn btn--small" href="https://github.com/Hustlenix/-personal-site-" target="_blank" rel="noopener noreferrer">View Source →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="origin">
+      <div class="container container--narrow">
+        <svg class="web-divider" viewBox="0 0 240 24" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="#0A0A0A">
+            <path d="M0 12 H94" stroke-width="3" />
+            <circle cx="120" cy="12" r="9" stroke-width="2" />
+            <circle cx="120" cy="12" r="4" stroke-width="2" fill="#E62429" />
+            <path d="M120 1 V23" stroke-width="2" />
+            <path d="M146 12 H240" stroke-width="3" />
+          </g>
+        </svg>
+        <p class="section-kicker">// Origin story</p>
+        <h2 class="section-title">Before the Suit</h2>
+        <p class="section-sub mono">THREE HONEST LINES, NO VIBES</p>
+        <div class="card origin-card corner-brackets">
+          <p>My name is Lalith. I'm still a student — not a founder, not an engineer, not an expert. Not yet. Just someone who refuses to stop building.</p>
+          <p>I build because I need to know if an idea can exist. Not for productivity, not for followers — curiosity. Once a question enters my head, it won't leave until I've answered it in code.</p>
+          <p>School is one part of my life. When classes end, another education begins: docs, talks, bugs, and things nobody asked me to build.</p>
+          <blockquote class="origin-quote">This site isn't proof that I've become extraordinary. It's proof that I decided to start.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="systems">
+      <div class="container">
+        <p class="section-kicker">// Suit systems</p>
+        <h2 class="section-title">Tools &amp; Stacks</h2>
+        <p class="section-sub mono">WHAT THE SUIT RUNS ON</p>
+        <div class="systems-grid">
+          <div class="card systems-card">
+            <h3>Web</h3>
+            <ul class="chips">
+              <li class="chip">TypeScript</li>
+              <li class="chip">React</li>
+              <li class="chip">Next.js</li>
+              <li class="chip">Tailwind CSS</li>
+              <li class="chip">Node.js</li>
+            </ul>
+          </div>
+          <div class="card systems-card">
+            <h3>Compute</h3>
+            <ul class="chips">
+              <li class="chip">Python</li>
+              <li class="chip">C</li>
+              <li class="chip">CUDA-Q</li>
+              <li class="chip">cuOpt</li>
+            </ul>
+          </div>
+          <div class="card systems-card">
+            <h3>Media</h3>
+            <ul class="chips">
+              <li class="chip">DaVinci Resolve scripting</li>
+              <li class="chip">FFmpeg</li>
+            </ul>
+          </div>
+          <div class="card systems-card">
+            <h3>Tooling</h3>
+            <ul class="chips">
+              <li class="chip">Git</li>
+              <li class="chip">GitHub Actions</li>
+              <li class="chip">static deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="signal">
+      <div class="container">
+        <p class="section-kicker">// Open channels</p>
+        <h2 class="section-title">Signal</h2>
+        <p class="section-sub mono">DIRECT LINES. NO PHONE BOOTH REQUIRED.</p>
+        <div class="signal-grid">
+          <a class="card signal-card signal-card--github" href="https://github.com/Hustlenix" target="_blank" rel="noopener noreferrer">
+            <h3>GitHub</h3>
+            <p class="mono">@Hustlenix</p>
+            <p class="signal-link">View Profile →</p>
+          </a>
+          <a class="card signal-card signal-card--email" href="mailto:thehustlenix@gmail.com">
+            <h3>Email</h3>
+            <p class="mono">thehustlenix@gmail.com</p>
+            <p class="signal-link">Send a Message →</p>
+          </a>
+        </div>
+        <p class="signal-note mono">BASE: INDIA // OPEN TO PROBLEMS WORTH SOLVING</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner mono">
+      <span>© 2026 LALITH</span>
+      <span>BUILT BY HAND — HTML, CSS &amp; VANILLA JS</span>
+      <span>NO FRAMEWORKS. NO EXCUSES.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
