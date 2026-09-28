@@ -1,6 +1,6 @@
 # Personal Site
 
-This is my personal website where I keep some of the projects I have built and a little bit about me.
+This is my personal website or, what i call as, my own portfolio, where I keep some of the projects I have built and a little bit about me.
 
 Live site: https://hustlenix.github.io/-personal-site-/
 
@@ -11,18 +11,8 @@ I mainly made this because I wanted a portfolio that actually felt like mine ins
 I like the Spider-Man / Iron Man / JARVIS kind of style, so I used that as inspiration for the colors and UI. The site has my projects, the tools I use, a short intro, contact links, and a JARVIS dark mode.
 
 The current version is just HTML, CSS and vanilla JavaScript. I had experimented with a bigger terminal-style version before, but I removed that and kept this version much simpler.
-
-### Screenshot
-
 ![Screenshot of the site](site/assets/site-screenshot.svg)
 
-## Getting Started
-
-### Dependencies
-
-Nothing special is needed.
-
-You just need a modern web browser. If you want to run it through a local server, Python works too.
 
 ### Installing
 
@@ -63,7 +53,7 @@ You can also open an issue in this repo if you find a bug.
 
 ## Author
 
-Lalith / [@Hustlenix](https://github.com/Hustlenix)
+ME/ Lalith / [@Hustlenix](https://github.com/Hustlenix)
 
 ## License
 
