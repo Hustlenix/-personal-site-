@@ -8,9 +8,9 @@ A one-page personal portfolio built with **plain HTML, CSS, and vanilla JavaScri
 
 ## Screenshot
 
-![Current desktop screenshot of the personal site](https://image.thum.io/get/width/1200/crop/800/noanimate/https://hustlenix.github.io/-personal-site-/)
+![Current desktop screenshot of the personal site](site/assets/site-screenshot.svg)
 
-The screenshot above is generated from the deployed homepage so it stays aligned with the current live version.
+The screenshot above is stored with the project and shows the current desktop layout.
 
 ## Why I made this
 
