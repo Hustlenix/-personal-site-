@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Lalith personal site desktop screenshot</title>
+  <desc id="desc">Desktop snapshot of the current vanilla HTML, CSS and JavaScript portfolio with navy hero, JARVIS status panel and project cards.</desc>
+  <rect width="1440" height="900" fill="#F4F1E8"/>
+  <rect x="0" y="0" width="1440" height="62" fill="#F4F1E8" stroke="#0A0A0A" stroke-width="3"/>
+  <circle cx="48" cy="31" r="18" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="3"/>
+  <circle cx="48" cy="31" r="10" fill="#F5C518" stroke="#0A0A0A" stroke-width="2"/>
+  <circle cx="48" cy="31" r="4" fill="#E62429" stroke="#0A0A0A" stroke-width="2"/>
+  <text x="78" y="40" font-family="Arial Black, Arial, sans-serif" font-size="26" fill="#0A0A0A">LAL</text>
+  <text x="132" y="40" font-family="Arial Black, Arial, sans-serif" font-size="26" fill="#E62429">ITH</text>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="15" fill="#0A0A0A">
+    <text x="520" y="38">MISSIONS</text><text x="635" y="38">ORIGIN</text><text x="735" y="38">SYSTEMS</text><text x="845" y="38">SIGNAL</text>
+  </g>
+  <rect x="1190" y="14" width="175" height="34" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="3"/>
+  <circle cx="1211" cy="31" r="9" fill="#F5C518" stroke="#0A0A0A" stroke-width="2"/>
+  <text x="1231" y="36" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#0A0A0A">JARVIS</text>
+
+  <rect x="0" y="62" width="1440" height="425" fill="#101B33" stroke="#0A0A0A" stroke-width="3"/>
+  <g opacity=".16" fill="#F4F1E8">
+    <circle cx="30" cy="94" r="2"/><circle cx="62" cy="94" r="2"/><circle cx="94" cy="94" r="2"/><circle cx="126" cy="94" r="2"/>
+    <circle cx="30" cy="126" r="2"/><circle cx="62" cy="126" r="2"/><circle cx="94" cy="126" r="2"/><circle cx="126" cy="126" r="2"/>
+    <circle cx="30" cy="158" r="2"/><circle cx="62" cy="158" r="2"/><circle cx="94" cy="158" r="2"/><circle cx="126" cy="158" r="2"/>
+  </g>
+  <text x="118" y="145" font-family="Courier New, monospace" font-size="18" letter-spacing="3" fill="#F5C518">// FRIENDLY NEIGHBORHOOD BUILDER</text>
+  <text x="108" y="285" font-family="Arial Black, Arial, sans-serif" font-size="150" fill="#F4F1E8" stroke="#E62429" stroke-width="2">LALITH</text>
+  <text x="118" y="340" font-family="Arial Black, Arial, sans-serif" font-size="34" fill="#F5C518">STUDENT. BUILDER. PROBLEM-SOLVER.</text>
+  <text x="118" y="382" font-family="Arial, sans-serif" font-size="21" fill="#F4F1E8">I’m still a student — not a founder, not an engineer, not an expert. Not yet.</text>
+  <rect x="118" y="416" width="176" height="48" fill="#E62429" stroke="#0A0A0A" stroke-width="3"/>
+  <rect x="305" y="416" width="160" height="48" fill="#F5C518" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="151" y="447" font-family="Arial Black, Arial, sans-serif" font-size="17" fill="#FFFFFF">VIEW MISSIONS</text>
+  <text x="337" y="447" font-family="Arial Black, Arial, sans-serif" font-size="17" fill="#0A0A0A">SIGNAL ME</text>
+
+  <rect x="345" y="525" width="750" height="150" fill="#101B33" stroke="#0A0A0A" stroke-width="3"/>
+  <rect x="351" y="531" width="750" height="150" fill="none" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="380" y="558" font-family="Courier New, monospace" font-size="15" font-weight="700" fill="#F5C518">JARVIS // STATUS FEED</text>
+  <circle cx="1050" cy="552" r="7" fill="#22C55E" stroke="#0A0A0A" stroke-width="2"/>
+  <g font-family="Courier New, monospace" font-size="15">
+    <text x="380" y="592" fill="#F5C518">NAME</text><text x="946" y="592" fill="#F4F1E8">LALITH</text>
+    <text x="380" y="621" fill="#F5C518">STATUS</text><text x="918" y="621" fill="#F4F1E8">SUITING UP</text>
+    <text x="380" y="650" fill="#F5C518">POWER SOURCE</text><text x="912" y="650" fill="#F4F1E8">CURIOSITY</text>
+  </g>
+
+  <text x="115" y="735" font-family="Courier New, monospace" font-size="15" font-weight="700" fill="#E62429">// ACTIVE DEPLOYMENTS</text>
+  <text x="108" y="795" font-family="Arial Black, Arial, sans-serif" font-size="54" fill="#0A0A0A">MISSIONS</text>
+  <rect x="110" y="822" width="370" height="58" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="3"/>
+  <rect x="502" y="822" width="370" height="58" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="3"/>
+  <rect x="894" y="822" width="370" height="58" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="132" y="858" font-family="Arial Black, Arial, sans-serif" font-size="22" fill="#0A0A0A">LEVEL UP</text>
+  <text x="524" y="858" font-family="Arial Black, Arial, sans-serif" font-size="22" fill="#0A0A0A">STANCELOOP</text>
+  <text x="916" y="858" font-family="Arial Black, Arial, sans-serif" font-size="22" fill="#0A0A0A">INFINITE COLOUR CRAFT</text>
+</svg>

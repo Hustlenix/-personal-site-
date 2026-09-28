@@ -62,8 +62,10 @@
 
   /* ---------- 2. Active nav link on scroll ---------- */
 
-  var sections = document.querySelectorAll("main section[id]");
   var navLinks = document.querySelectorAll(".nav-links a");
+  var sections = Array.prototype.map.call(navLinks, function (link) {
+    return document.querySelector(link.getAttribute("href"));
+  }).filter(Boolean);
 
   if ("IntersectionObserver" in window && sections.length) {
     var navObs = new IntersectionObserver(function (entries) {
@@ -72,6 +74,11 @@
         navLinks.forEach(function (link) {
           var isActive = link.getAttribute("href") === "#" + entry.target.id;
           link.classList.toggle("is-active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
         });
       });
     }, { rootMargin: "-35% 0px -60% 0px" });
