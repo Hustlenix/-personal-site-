@@ -1,64 +1,49 @@
-# LALITH — Friendly Neighborhood Builder
+# Personal Site
 
-A one-page personal portfolio built with **plain HTML, CSS, and vanilla JavaScript**.
+This is my personal website where I keep some of the projects I have built and a little bit about me.
 
-**Live:** https://hustlenix.github.io/-personal-site-/
+Live site: https://hustlenix.github.io/-personal-site-/
 
-> The current version does **not** use Next.js, React, TypeScript, or Tailwind, and it does not include the older interactive-terminal / virtual-filesystem experiment.
+## Description
 
-## Screenshot
+I mainly made this because I wanted a portfolio that actually felt like mine instead of using another clean corporate-looking template.
 
-![Current desktop screenshot of the personal site](site/assets/site-screenshot.svg)
+I like the Spider-Man / Iron Man / JARVIS kind of style, so I used that as inspiration for the colors and UI. The site has my projects, the tools I use, a short intro, contact links, and a JARVIS dark mode.
 
-The screenshot above is stored with the project and shows the current desktop layout.
+The current version is just HTML, CSS and vanilla JavaScript. I had experimented with a bigger terminal-style version before, but I removed that and kept this version much simpler.
 
-## Why I made this
+### Screenshot
 
-I wanted one place that could show what I am building without pretending I am already an expert. A lot of portfolio templates felt too corporate for me, so I made something that feels closer to my own interests: comic-book energy, an arc-reactor/JARVIS theme, hard neo-brutalist borders, and project cards that point to things I have actually shipped.
+![Screenshot of the site](site/assets/site-screenshot.svg)
 
-I also wanted the site to stay understandable. Rebuilding it as vanilla HTML/CSS/JS means there is no framework hiding the basics from me, and every interaction on the page is small enough to inspect and learn from.
+## Getting Started
 
-## What it includes
+### Dependencies
 
-- responsive one-page portfolio
-- JARVIS dark mode persisted with `localStorage`
-- scroll-reveal animation with reduced-motion support
-- active navigation with `aria-current`
-- current project cards with source/live links where verified
-- themed 404 page
-- canonical/social metadata, `robots.txt`, and `sitemap.xml`
-- automatic GitHub Pages deployment from `site/`
+Nothing special is needed.
 
-## Visual direction
+You just need a modern web browser. If you want to run it through a local server, Python works too.
 
-The design mixes neo-brutalism with comic-book / powered-suit references:
+### Installing
 
-- red `#E62429`
-- deep navy `#101B33`
-- gold `#F5C518`
-- cream background
-- hard borders and offset shadows
-- halftone dots, web motifs, and a CSS arc-reactor
+Clone the repo:
 
-The **JARVIS** switch changes the site into a darker cockpit-style theme and saves the choice in the browser.
+```bash
+git clone https://github.com/Hustlenix/-personal-site-.git
+cd -personal-site-
+```
 
-## Project structure
+Or just download the ZIP from GitHub.
 
-| Path | Purpose |
-|---|---|
-| `site/index.html` | Main portfolio: hero, status feed, missions, origin, systems, contact |
-| `site/styles.css` | Responsive styling, theme variables, cards, motion, and accessibility states |
-| `site/script.js` | Theme persistence, scroll reveal, active nav, and JARVIS status ticker |
-| `site/404.html` | Themed GitHub Pages 404 |
-| `site/robots.txt` | Search crawler rules |
-| `site/sitemap.xml` | Sitemap for the deployed homepage |
-| `.github/workflows/deploy.yml` | Publishes `site/` to GitHub Pages on pushes to `main` |
+### Executing program
 
-## Run locally
+The easiest way is to open:
 
-No npm install or build step is required.
+```text
+site/index.html
+```
 
-From the repository root:
+You can also run a small local server from the repo folder:
 
 ```bash
 python -m http.server 8000 --directory site
@@ -67,28 +52,19 @@ python -m http.server 8000 --directory site
 Then open:
 
 ```text
-http://localhost:8000/
+http://localhost:8000
 ```
 
-You can also open `site/index.html` directly, although a local HTTP server is closer to the deployed environment.
+## Help
 
-## Deployment
+If something looks broken, check that `index.html`, `styles.css` and `script.js` are all still inside the `site` folder.
 
-GitHub Actions publishes the contents of `site/` to GitHub Pages whenever changes land on `main`.
+You can also open an issue in this repo if you find a bug.
 
-Live site:
+## Author
 
-https://hustlenix.github.io/-personal-site-/
-
-## Accessibility notes
-
-- semantic headings and navigation
-- visible keyboard focus styles
-- reduced-motion support
-- active section announced with `aria-current="location"`
-- theme control exposed as a switch with `aria-checked`
-- core page content remains readable if JavaScript is disabled
+Lalith / [@Hustlenix](https://github.com/Hustlenix)
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
