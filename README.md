@@ -1,6 +1,6 @@
 # LALITH — Personal Site
 
-#### A neo-brutalist personal portfolio with JARVIS mode, project cards, and no framework.
+#### This is my porfolio kinda thing for myself, by myself, to myself
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111) ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white)
 
@@ -10,32 +10,20 @@
 
 <img width="922" height="852" alt="Screenshot of the personal site" src="https://github.com/user-attachments/assets/9423c95a-a007-4cf2-bc2c-56d1ffb1cd57" />
 
-> **⚡ Current version:** this site is plain HTML, CSS and vanilla JavaScript. I had an older terminal-style version with more complicated ideas, but I removed it and rebuilt the site around a simpler portfolio.
-
+ Current version: this site is plain HTML, CSS and vanilla JavaScript. 
 ![Desktop preview](site/assets/site-screenshot.svg)
 
 ## Key Features
 
-- **JARVIS mode** — switches the whole site into a darker cockpit-style theme
-- **Theme memory** — the selected theme is saved with `localStorage`
-- **Project cards** — links to projects I have actually built and shipped
-- **Status feed** — small typewriter-style JARVIS status animation
-- **Active navigation** — the nav updates as you move through the page
-- **Scroll reveals** — sections animate in when they enter the screen
-- **Reduced-motion support** — animations back off when the browser requests it
-- **Responsive layout** — built to work across desktop and smaller screens
-- **Custom 404 page** — keeps the same visual style if you hit a missing page
-- **GitHub Pages deployment** — the `site/` folder is deployed automatically from `main`
+It is basically all about me, so pleae check it out and come
 
 ## How It Works
 
-The whole website lives inside the `site/` folder. There is no React app, package manager, build step or framework hiding behind it.
+The whole website lives inside the `site/` folder, just open the link and you will get to my site!
 
 ### Theme system
 
-The light theme and JARVIS theme are mostly controlled through CSS variables.
-
-When the JARVIS button is pressed, JavaScript adds:
+Just for my dev friends i have added a light theme and a dark theme, so thay can chage in between 
 
 ```html
 data-theme="jarvis"
@@ -58,9 +46,7 @@ BUILDING STUFF
 SHIPPING
 ```
 
-### Project cards
-
-The Missions section currently shows projects such as:
+### also check out my other projects:
 
 - [Level Up](https://github.com/Hustlenix/LevelUp)
 - [StanceLoop](https://github.com/Hustlenix/stance-loop)
@@ -68,8 +54,6 @@ The Missions section currently shows projects such as:
 - [Super-Micro Heroes](https://github.com/Hustlenix/Iron-Mario)
 - [AquaGuardian](https://github.com/Hustlenix/aquaguardian)
 - this personal site
-
-Each card is written manually, so I can keep the description and links under my control instead of pulling random data into the page.
 
 ## Project Structure
 
@@ -91,45 +75,14 @@ Each card is written manually, so I can keep the description and links under my 
 └── README.md
 ```
 
-## Run Locally
-
-You do not need to install npm packages.
-
-Clone the repo:
-
-```bash
-git clone https://github.com/Hustlenix/-personal-site-.git
-cd -personal-site-
-```
-
-Then either open `site/index.html` directly, or run:
-
-```bash
-python -m http.server 8000 --directory site
-```
-
-and open:
-
-```text
-http://localhost:8000/
-```
-
 ## Why I Made It
 
 I wanted a place for my projects that did not look like another copied portfolio template.
 
-I like the Spider-Man / Iron Man / JARVIS kind of visual style, so I started mixing that with neo-brutalist cards, hard borders, strong colors and the arc-reactor idea. The main point of the site is still simple though: show what I am building, keep the links in one place, and make the page feel like something I would actually make.
-
-I also wanted this version to stay understandable. Since it is just HTML, CSS and JavaScript, I can open any file and know exactly where something is coming from.
-
-## Credits
+I like the Marvel, so I started mixing that with neo-brutalist cards. The main point of the site is show my projects + what i am building and how you can contact me. I also wanted it to be minimal, so made it with just HTML and CSS, slightly used JS
 
 This project uses or is inspired by:
-
-- [GitHub Pages](https://pages.github.com/) for hosting
-- [GitHub Actions](https://github.com/features/actions) for deployment
-- [Google Fonts](https://fonts.google.com/) — Anton, IBM Plex Sans and JetBrains Mono
-- Spider-Man / Iron Man / JARVIS-inspired colors and interface ideas
+MYSELF!!
 
 ## You may also like...
 
