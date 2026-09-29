@@ -2,10 +2,6 @@
 
 #### This is my porfolio kinda thing for myself, by myself, to myself
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111) ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white)
-
-[Key Features](#key-features) • [How It Works](#how-it-works) • [Run Locally](#run-locally) • [Why I Made It](#why-i-made-it) • [Credits](#credits) • [License](#license)
-
 [Live Website](https://hustlenix.github.io/-personal-site-/) • [Source](https://github.com/Hustlenix/-personal-site-)
 
 <img width="922" height="852" alt="Screenshot of the personal site" src="https://github.com/user-attachments/assets/9423c95a-a007-4cf2-bc2c-56d1ffb1cd57" />
