@@ -1,14 +1,3 @@
-/* =========================================================
-   LALITH — script.js
-   Vanilla JS, zero dependencies. Four small modules:
-   0. Theme toggle (light ↔ JARVIS), persisted to localStorage
-   1. Scroll reveal (IntersectionObserver)
-   2. Active nav link on scroll (IntersectionObserver)
-   3. JARVIS status ticker (types the status feed values)
-   Every feature degrades gracefully: if JS is off, all
-   content is already present in the HTML.
-   ========================================================= */
-
 (function () {
   "use strict";
 
