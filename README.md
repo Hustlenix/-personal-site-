@@ -10,6 +10,9 @@ It is basically all about me. I'm Lalith, and this is where you can check out th
 
 The design mixes Spider-Man and Iron Man with big text, thick borders, and a light mode plus a dark JARVIS mode. The project section links to my games and other websites. This site itself uses plain HTML, CSS, and JavaScript.
 
+## AI USAGE
+I used it to structure the data about me, and also for the themes that i used in it. Like i used AI for coding too, it help me learn too
+
 ## Screenshots
 
 ![Screenshot of my personal website](https://github.com/user-attachments/assets/db429bf9-af1b-44d9-8f67-aa77f2590cdb)
